@@ -1,3 +1,7 @@
+#calc-form {
+    width: 300px;
+}
+
 #errors {
     color: red;
 }

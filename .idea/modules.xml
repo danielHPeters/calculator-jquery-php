@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/jquery.iml" filepath="$PROJECT_DIR$/.idea/jquery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/calculator-jquery-php.iml" filepath="$PROJECT_DIR$/.idea/calculator-jquery-php.iml" />
     </modules>
   </component>
 </project>
