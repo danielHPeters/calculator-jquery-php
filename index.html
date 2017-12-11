@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculate</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Calculate!</h1>
+  <form id="calc-form">
+    <div class="input-field">
+      <label for="num1">Zahl 1</label>
+      <input type="number" id="num1" name="num1" required>
+    </div>
+    <div class="input-field">
+      <label for="num2">Zahl 2</label>
+      <input type="number" id="num2" name="num2" required>
+    </div>
+    <button type="submit" id="add" name="type" value="add" class="waves-effect waves-light btn">+</button>
+    <button type="submit" id="subtract" name="type" value="subtract" class="waves-effect waves-light btn">-</button>
+    <button type="submit" id="multiply" name="type" value="multiply" class="waves-effect waves-light btn">*</button>
+    <button type="submit" id="divide" name="type" value="divide" class="waves-effect waves-light btn">/</button>
+  </form>
+  <p>Result:</p>
+  <p id="result"></p>
+  <p id="errors"></p>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="calculate.js"></script>
+</body>
+</html>
