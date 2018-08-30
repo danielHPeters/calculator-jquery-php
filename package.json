@@ -1,0 +1,26 @@
+{
+  "name": "calculator-jquery-php",
+  "version": "1.0.0",
+  "description": "Calculator using jquery and php.",
+  "main": "calculate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/danielPeters/calculator-jquery-php.git"
+  },
+  "keywords": [
+    "JQuery",
+    "PHP"
+  ],
+  "author": "Daniel Peters <daniel.peters.ch@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/danielPeters/calculator-jquery-php/issues"
+  },
+  "homepage": "https://gitlab.com/danielPeters/calculator-jquery-php#readme",
+  "devDependencies": {
+    "@types/jquery": "^3.3.6"
+  }
+}
