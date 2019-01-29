@@ -1,31 +1,51 @@
-function submitNumbers (event) {
-  event.preventDefault()
-  const errorDiv = $('#errors')
-  const resultDiv = $('#result')
+function submitNumbers (element) {
+  const resultDiv = document.getElementById('result')
+  const form = document.getElementById('calcForm')
 
-  errorDiv.empty()
-  resultDiv.empty()
+  resultDiv.textContent = ''
 
   const data = {
-    type: $(this).val(),
-    num1: $('#num1').val(),
-    num2: $('#num2').val()
+    type: element.value,
+    num1: form.elements.namedItem('num1').value,
+    num2: form.elements.namedItem('num2').value
   }
 
-  $.ajax({
-    url: 'calculate.php',
+  console.log(data)
+
+  fetch('/calculate.php', {
     method: 'post',
-    data: data
-  }).done(data => {
-    if (data.result !== undefined) {
-      resultDiv.text(data.result)
-    } else if (data.errors) {
-      errorDiv.text('Error: ')
-      data.errors.forEach(function (error) {
-        errorDiv.append('<br>' + error)
-      })
-    }
+    mode: 'same-origin',
+    credentials: 'omit',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+    },
+    body: JSON.stringify(data)
   })
+    .then(response => response.json())
+    .then(data => {
+      if (data.result !== undefined) {
+        resultDiv.value = data.result
+        form.reset()
+      } else if (data.errors) {
+        resultDiv.value = `Error: ${data.errors.join(', ')}`
+      }
+    })
+    .catch(error => {
+      M.toast(error)
+      console.log(error)
+    })
 }
 
-document.addEventListener('DOMContentLoaded', ev => $('button').on('click', submitNumbers))
+document.addEventListener('DOMContentLoaded', () => {
+  const buttonIds = ['addition', 'subtraction', 'multiplication', 'division']
+
+  buttonIds.forEach(id => {
+    const button = document.getElementById(id)
+    button.addEventListener('click', evt => {
+      evt.preventDefault()
+      submitNumbers(button)
+    })
+  })
+})

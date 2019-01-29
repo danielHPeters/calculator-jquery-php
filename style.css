@@ -1,7 +1,8 @@
-#calc-form {
-    width: 300px;
+.calc-form {
+  width: 20em;
 }
 
-#errors {
-    color: red;
+.error {
+  white-space: pre-wrap;
+  color: #f00;
 }

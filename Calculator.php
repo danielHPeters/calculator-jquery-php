@@ -62,7 +62,7 @@ class Calculator {
 
   public static function calculate (string $action, $num1, $num2): array {
     $response = [];
-    switch ($_POST['type']) {
+    switch ($action) {
       case Calculator::ADDITION:
         $response['result'] = Calculator::addition($num1, $num2);
         break;

@@ -20,7 +20,5 @@
     "url": "https://gitlab.com/danielPeters/calculator-jquery-php/issues"
   },
   "homepage": "https://gitlab.com/danielPeters/calculator-jquery-php#readme",
-  "devDependencies": {
-    "@types/jquery": "^3.3.6"
-  }
+  "devDependencies": {}
 }
