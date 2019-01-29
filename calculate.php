@@ -13,8 +13,8 @@ $response = [];
 $payload = file_get_contents('php://input');
 $data = json_decode($payload);
 
-$num1 = intval($data->num1);
-$num2 = intval($data->num2);
+$num1 = $data->num1;
+$num2 = $data->num2;
 
 if (!isset($num1) || trim($num1) === '') {
   $response['errors'][] = 'num1 cannot be empty';
@@ -25,7 +25,7 @@ if (!isset($num2) || trim($num2) === '') {
 }
 
 if (empty($response['errors'])) {
-  $response = Calculator::calculate($data->type, $num1, $num2);
+  $response = Calculator::calculate($data->type, intval($num1), intval($num2));
 }
 
 echo json_encode($response);
